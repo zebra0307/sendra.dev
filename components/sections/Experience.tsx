@@ -1,102 +1,78 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, Code } from "lucide-react";
+import { Briefcase, GraduationCap, Code, Building2 } from "lucide-react";
 
 const experiences = [
     {
         id: 1,
         role: "Turbine Builder",
-        company: "Turbine",
-        period: "Present",
-        type: "Web3 Development",
-        description: "Building next-gen DeFi protocols and NFT marketplaces on Solana.",
+        company: "Turbine (Solana ecosystem)",
+        period: "Jan 2025 – Present",
+        type: "Web3 / DeFi Development",
+        description: "Building next-gen DeFi protocols and NFT marketplaces on Solana using Rust and Anchor framework. Contributed to protocol architecture and on-chain program design.",
         icon: Code,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20",
+        color: "text-secondary",
+        bg: "bg-secondary/8",
+        border: "border-secondary/15",
     },
     {
         id: 2,
         role: "Ackee Builder",
         company: "Ackee Blockchain",
-        period: "Solana season-7, 2025",
-        type: "Web3 Infrastructure",
-        description: "Contributing to decentralized infrastructure and auditing smart contracts.",
+        period: "Solana Season 7, 2025",
+        type: "Security & Infrastructure",
+        description: "Participated in Ackee Blockchain's builder programme. Focused on smart contract security, audit practices, and decentralized infrastructure on Solana.",
         icon: Briefcase,
         color: "text-secondary",
         bg: "bg-secondary/10",
         border: "border-secondary/20",
     },
-    // {
-    //     id: 3,
-    //     role: "Web3 Developer",
-    //     company: "Freelance / Independent",
-    //     period: "2023 - Present",
-    //     type: "dApps & Smart Contracts",
-    //     description: "Developing custom dApps, NFT collections, and DeFi solutions for various clients.",
-    //     icon: Code,
-    //     color: "text-accent",
-    //     bg: "bg-accent/10",
-    //     border: "border-accent/20",
-    // },
     {
         id: 3,
-        role: "Web3 Cohort Participant",
-        company: "100xDevs / Others",
-        period: "2025",
-        type: "Intermediate Learning",
-        description: "Deep dive into blockchain architecture, consensus mechanisms.",
-        icon: GraduationCap,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20",
+        role: "Full Stack Developer",
+        company: "Freelance & Personal Projects",
+        period: "2024 – Present",
+        type: "React / Node.js / MERN",
+        description: "Built scalable full-stack applications using the MERN stack and PostgreSQL. Shipped projects including authentication systems, REST APIs, and real-time web apps.",
+        icon: Building2,
+        color: "text-secondary",
+        bg: "bg-secondary/10",
+        border: "border-secondary/20",
     },
     {
         id: 4,
-        role: "Full Stack Web2 Developer",
-        company: "Various Projects",
-        period: "2024-present",
-        type: "React / Node.js",
-        description: "Built scalable full-stack applications using MERN stack and PostgreSQL.",
-        icon: Briefcase,
+        role: "Web3 Cohort Participant",
+        company: "100xDevs",
+        period: "2024",
+        type: "Blockchain & DevOps Learning",
+        description: "Completed an intensive cohort covering blockchain architecture, consensus mechanisms, DevOps, and advanced backend engineering patterns.",
+        icon: GraduationCap,
         color: "text-secondary",
-        bg: "bg-secondary/10",
-        border: "border-secondary/20",
+        bg: "bg-secondary/8",
+        border: "border-secondary/15",
     },
-    // {
-    //     id: 5,
-    //     role: "Research Assistant",
-    //     company: "University Project",
-    //     period: "2023",
-    //     type: "Blockchain Research",
-    //     description: "Researched blockchain scalability solutions and consensus algorithms.",
-    //     icon: GraduationCap,
-    //     color: "text-accent",
-    //     bg: "bg-accent/10",
-    //     border: "border-accent/20",
-    // },
 ];
 
 export function Experience() {
     return (
-        <section id="experience" className="py-20 md:py-32 relative">
+        <section id="experience" className="py-10 md:py-14 relative">
             <div className="container px-4 md:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="mb-8"
                 >
-                    <h2 className="font-heading text-4xl md:text-5xl text-white mb-4">
-                        Experience & <span className="text-secondary">Education</span>
+                    <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
+                        Experience &amp; <span className="text-secondary">Education</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        My professional journey through the web stack.
+                        My professional journey through Web2 and Web3.
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 gap-6">
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={exp.id}
@@ -110,12 +86,15 @@ export function Experience() {
                                 <div className={`p-3 rounded-lg ${exp.bg} ${exp.color}`}>
                                     <exp.icon size={24} />
                                 </div>
-                                <span className="text-xs font-medium text-gray-500 bg-dark-200 px-2 py-1 rounded-full">
-                                    {exp.period}
-                                </span>
+                                <div className="text-right">
+                                    <span className="text-xs font-semibold text-white/60 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+                                        {exp.period}
+                                    </span>
+                                    <p className="text-[10px] text-white/30 mt-1.5 uppercase tracking-widest">{exp.type}</p>
+                                </div>
                             </div>
 
-                            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                            <h3 className={`text-xl font-bold text-white mb-1 group-hover:${exp.color} transition-colors`}>
                                 {exp.role}
                             </h3>
                             <p className="text-sm text-gray-400 font-medium mb-3">

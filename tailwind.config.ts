@@ -9,14 +9,17 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                background: "#000000", // bg-black
+                background: "#000000",
                 foreground: "#ffffff",
-                // Keeping primary/secondary as placeholders if needed, but user specified neutral-900
-                card: "#171717", // neutral-900
+                primary: "#0eb87f",
+                secondary: "#14F195",
+                "dark-100": "#0d0d0d",
+                "dark-200": "#161616",
+                card: "#171717",
             },
             fontFamily: {
                 sans: ["var(--font-inter)"],
-                // Removing specific heading font as user requested Inter for everything
+                heading: ["var(--font-inter)"],
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

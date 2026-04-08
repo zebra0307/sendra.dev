@@ -4,7 +4,6 @@ import * as React from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, socialLinks } from "./Sidebar";
-import { cn } from "@/lib/utils";
 
 export function MobileNav() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -17,7 +16,7 @@ export function MobileNav() {
             <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-black/80 backdrop-blur-md border-b border-white/10 z-50 flex items-center justify-between px-4">
                 <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full overflow-hidden bg-neutral-900 border border-white/10">
-                        <img src="/satyendra.jpeg" alt="Satyendra Yadav" className="w-full h-full object-cover" />
+                        <img src="/satyendra.jpeg" alt="Satyendra Yadav" className="w-full h-full object-cover object-top" />
                     </div>
                     <span className="font-bold text-white tracking-tight">Satyendra Yadav</span>
                 </div>
@@ -75,7 +74,17 @@ export function MobileNav() {
                                                     className="group flex items-center gap-3 px-3 py-2 rounded-lg text-white/50 hover:text-white hover:bg-white/5 transition-all duration-200"
                                                     onClick={(e) => {
                                                         e.preventDefault();
-                                                        document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                                                        const target = document.querySelector(link.href) as HTMLElement;
+                                                        if (!target) return;
+                                                        const container = document.getElementById("main-scroll");
+                                                        if (container) {
+                                                            const containerRect = container.getBoundingClientRect();
+                                                            const targetRect = target.getBoundingClientRect();
+                                                            const scrollTo = container.scrollTop + (targetRect.top - containerRect.top) - 24;
+                                                            container.scrollTo({ top: scrollTo, behavior: "smooth" });
+                                                        } else {
+                                                            target.scrollIntoView({ behavior: "smooth" });
+                                                        }
                                                         setIsOpen(false);
                                                     }}
                                                 >

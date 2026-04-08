@@ -7,13 +7,24 @@ import { Sidebar } from "@/components/layout/Sidebar";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Satyendra Yadav",
-  description: "Responsive Portfolio",
+  title: "Satyendra Yadav | Full Stack & Solana Developer",
+  description: "Satyendra Yadav — Full Stack Engineer specializing in MERN stack and Solana smart contract development. Building scalable dApps and DeFi protocols.",
+  keywords: ["Satyendra Yadav", "Solana Developer", "Full Stack Engineer", "Smart Contract", "DeFi", "React", "Next.js", "Rust", "Anchor"],
+  openGraph: {
+    title: "Satyendra Yadav | Full Stack & Solana Developer",
+    description: "Full Stack Engineer specializing in MERN stack and Solana smart contract development.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Satyendra Yadav | Full Stack & Solana Developer",
+    description: "Full Stack Engineer specializing in MERN stack and Solana smart contract development.",
+    creator: "@zebradotsol",
+  },
 };
 
 import { MobileNav } from "@/components/layout/MobileNav";
-
-// ... imports
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 export default function RootLayout({
   children,
@@ -21,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+        <html lang="en" className="dark">
       <body
         className={cn(
           inter.variable,
@@ -29,14 +40,15 @@ export default function RootLayout({
         )}
       >
         <MobileNav />
+        <ScrollProgress />
         <div className="min-h-screen lg:flex">
           {/* Sidebar Column */}
           <Sidebar />
 
           {/* Main Content Column */}
-          <main className="flex-1 lg:ml-[280px] p-0 lg:p-0 pt-16 lg:pt-0">
+          <main className="flex-1 lg:ml-[240px] p-0 lg:p-0 pt-16 lg:pt-0">
             {/* Floating Card Container - Desktop Only Styles applied via class */}
-            <div className="min-h-[calc(100vh-64px)] lg:min-h-0 lg:h-[calc(100vh-40px)] lg:m-5 lg:rounded-[40px] lg:overflow-y-auto lg:bg-neutral-900 lg:shadow-lg lg:shadow-neutral-800/40 transition-all duration-300 ease-in-out bg-neutral-900 lg:bg-transparent">
+            <div id="main-scroll" className="min-h-[calc(100vh-64px)] lg:min-h-0 lg:h-[calc(100vh-40px)] lg:m-5 lg:rounded-[40px] lg:overflow-y-auto lg:bg-neutral-900 lg:shadow-lg lg:shadow-neutral-800/40 transition-all duration-300 ease-in-out bg-neutral-900 lg:bg-transparent">
               {children}
             </div>
           </main>

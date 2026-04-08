@@ -26,7 +26,7 @@ const projects: Project[] = [
             demo: "https://decentralised-solana-poll.vercel.app/",
             code: "https://github.com/zebra0307/solana-twitter-dapp",
         },
-        image: "bg-gradient-to-br from-primary/20 to-purple-500/20",
+        image: "bg-gradient-to-br from-secondary/10 to-secondary/5",
         imageUrl: "/solana-twitter-new.png",
     },
     {
@@ -37,7 +37,7 @@ const projects: Project[] = [
             demo: "#",
             code: "https://github.com/zebra0307/blogs-MERN",
         },
-        image: "bg-gradient-to-br from-primary/20 to-purple-500/20",
+        image: "bg-gradient-to-br from-secondary/10 to-secondary/5",
     },
     {
         title: "Solana Token",
@@ -67,23 +67,23 @@ const projects: Project[] = [
             demo: "#",
             code: "https://github.com/zebra0307/Keep_Notes-dapp",
         },
-        image: "bg-gradient-to-br from-primary/20 to-purple-500/20",
+        image: "bg-gradient-to-br from-secondary/10 to-secondary/5",
     },
 ];
 
 export function Projects() {
     return (
-        <section id="projects" className="py-20 md:py-32 bg-background">
+        <section id="projects" className="py-10 md:py-14 bg-background">
             <div className="container px-4 md:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6"
+                    className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4"
                 >
                     <div>
-                        <h2 className="font-heading text-4xl md:text-5xl text-white mb-4">
-                            Featured <span className="text-primary">Projects</span>
+                        <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
+                            <span className="text-secondary">Projects</span>
                         </h2>
                         <p className="text-gray-400 max-w-xl">
                             A selection of decentralized applications and web systems I've engineered.
@@ -102,7 +102,7 @@ export function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group rounded-xl border border-white/10 bg-dark-100 overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col h-full"
+                            className="group rounded-xl border border-white/8 bg-dark-100 overflow-hidden hover:border-secondary/30 transition-all duration-300 flex flex-col h-full"
                         >
                             {/* Project Image / Preview Area */}
                             <div className={`relative h-48 w-full ${project.imageUrl ? "" : project.image} overflow-hidden`}>
@@ -124,7 +124,7 @@ export function Projects() {
                             </div>
 
                             <div className="p-5 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-secondary transition-colors">
                                     {project.title}
                                 </h3>
 
@@ -143,7 +143,7 @@ export function Projects() {
                                     </a>
                                     <div className="flex gap-2">
                                         {project.links.demo !== "#" && (
-                                            <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors">
+                                            <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="text-white/35 hover:text-secondary transition-colors">
                                                 <ExternalLink size={16} />
                                             </a>
                                         )}
