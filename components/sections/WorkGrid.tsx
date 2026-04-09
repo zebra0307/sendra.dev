@@ -1,68 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
-const works = [
+type Work = {
+    id: number;
+    title: string;
+    description: string;
+    link: string;
+    demo: string | null;
+    tags: string[];
+    imageUrl: string;
+};
+
+const works: Work[] = [
     {
         id: 1,
-        title: "Solana Twitter dApp",
-        description: "A fully decentralized social media platform built on Solana. Features real-time on-chain interactions and wallet-based authentication.",
-        link: "https://github.com/zebra0307/solana-twitter-dapp",
-        demo: "https://decentralised-solana-poll.vercel.app/",
-        tags: ["Rust", "Anchor", "Solana", "React"],
-        gradient: "from-purple-500/20 via-primary/10 to-transparent",
-        accent: "border-primary/30",
-    },
-    {
-        id: 2,
         title: "Blogs Application (MERN)",
-        description: "A full-stack blog application for content creation and consumption with seamless user authentication and rich text editing.",
+        description: "A MERN stack blog application for content creation and consumption with seamless user authentication.",
         link: "https://github.com/zebra0307/blogs-MERN",
         demo: null,
         tags: ["React", "Node.js", "MongoDB", "Express"],
-        gradient: "from-blue-500/20 via-accent/10 to-transparent",
-        accent: "border-accent/30",
+        imageUrl: "/projects/zblog.png",
+    },
+    {
+        id: 2,
+        title: "Oceanaverse",
+        description: "A decentralized Blue Carbon Registry on Solana. It enables transparent monitoring, reporting, and verification (MRV) for blue carbon credits using blockchain.",
+        link: "https://github.com/zebra0307/blue-carbon-registry",
+        demo: "https://oceanaverse.vercel.app/",
+        tags: ["Solana", "Rust", "Anchor", "Next.js", "Web3"],
+        imageUrl: "/projects/oceanaverse.png",
     },
     {
         id: 3,
-        title: "NFT Marketplace Escrow",
-        description: "A marketplace program where tokens can be traded for other tokens or SOL. Implements an escrow mechanism for trustless trading.",
-        link: "https://github.com/zebra0307/NFT-Marketplace",
-        demo: null,
-        tags: ["Rust", "Anchor", "Solana", "IPFS"],
-        gradient: "from-green-500/20 via-secondary/10 to-transparent",
-        accent: "border-secondary/30",
+        title: "Accord Registry",
+        description: "A secure protocol for notarizing digital assets and documents. Built to provide an immutable audit trail and verifiable proof of ownership on-chain.",
+        link: "https://github.com/zebra0307/accord-registry_protocol",
+        demo: "https://accordregistry.vercel.app/",
+        tags: ["Rust", "Solana", "Anchor", "TypeScript", "Next.js"],
+        imageUrl: "/projects/accord-registry.png",
     },
     {
         id: 4,
-        title: "Solana Token",
-        description: "A collection of Solana blockchain projects demonstrating token standards, SPL token creation, and NFT implementations.",
-        link: "https://github.com/zebra0307/Solana-Token",
-        demo: null,
-        tags: ["Next.js", "Web3.js", "DeFi", "Solana"],
-        gradient: "from-orange-500/20 via-yellow-500/10 to-transparent",
-        accent: "border-yellow-500/30",
-    },
-    {
-        id: 5,
-        title: "Keep Notes dApp",
-        description: "A decentralized note-taking application on Solana. Store and manage your notes immutably on-chain with full ownership.",
-        link: "https://github.com/zebra0307/Keep_Notes-dapp",
-        demo: null,
-        tags: ["Rust", "Anchor", "Solana", "React"],
-        gradient: "from-pink-500/20 via-purple-500/10 to-transparent",
-        accent: "border-pink-500/30",
-    },
-    {
-        id: 6,
-        title: "Decentralised Poll",
-        description: "A trustless on-chain polling system on Solana. Create and vote on polls with full transparency and censorship resistance.",
-        link: "https://github.com/zebra0307",
-        demo: "https://decentralised-solana-poll.vercel.app/",
-        tags: ["Rust", "Anchor", "Solana", "Next.js"],
-        gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
-        accent: "border-cyan-500/30",
+        title: "XDotSol",
+        description: "A decentralized polling and voting application on Solana. Leverages the speed of the blockchain to ensure tamper-proof results and transparent community governance.",
+        link: "https://github.com/zebra0307/Decentralised-Solana-Poll",
+        demo: "https://xdotsol.vercel.app/",
+        tags: ["Solana", "Rust", "Anchor", "Next.js", "Tailwind CSS"],
+        imageUrl: "/projects/xdotsol-preview.png",
     },
 ];
 
@@ -73,9 +59,6 @@ export function WorkGrid() {
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
                     My <span className="text-primary">Projects</span>
                 </h2>
-                <p className="text-white/50 text-lg max-w-xl">
-                    A selection of decentralized applications and web systems I&apos;ve engineered.
-                </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -86,24 +69,17 @@ export function WorkGrid() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.08 }}
-                        className={`group rounded-2xl border bg-dark-100 overflow-hidden hover:bg-dark-200 transition-all duration-300 flex flex-col ${work.accent} hover:shadow-lg hover:shadow-primary/5`}
+                        className="group rounded-2xl border border-white/10 bg-dark-100 overflow-hidden hover:bg-dark-200 hover:border-white/20 transition-all duration-300 flex flex-col hover:shadow-lg hover:shadow-primary/5"
                     >
-                        {/* Gradient top area */}
-                        <div className={`h-40 w-full bg-gradient-to-br ${work.gradient} relative overflow-hidden`}>
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <ArrowUpRight className="text-white w-10 h-10" />
-                            </div>
-                            {/* Tags floating on the gradient */}
-                            <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
-                                {work.tags.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="px-2 py-0.5 text-xs font-semibold bg-black/50 backdrop-blur-sm text-white/80 rounded-full border border-white/10"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
+                        {/* Project image */}
+                        <div className="h-40 w-full relative overflow-hidden bg-dark-200">
+                            <img
+                                src={work.imageUrl}
+                                alt={`${work.title} preview`}
+                                loading="lazy"
+                                className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                         </div>
 
                         {/* Content */}
@@ -111,6 +87,16 @@ export function WorkGrid() {
                             <h3 className="text-white font-bold text-lg mb-2 group-hover:text-primary transition-colors">
                                 {work.title}
                             </h3>
+                            <div className="mb-3 flex flex-wrap gap-1.5">
+                                {work.tags.map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="px-2 py-0.5 text-xs font-semibold bg-white/5 text-white/70 rounded-full border border-white/10"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                             <p className="text-white/50 text-sm leading-relaxed line-clamp-3 flex-grow">
                                 {work.description}
                             </p>

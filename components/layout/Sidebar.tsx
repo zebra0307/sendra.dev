@@ -65,7 +65,7 @@ export function Sidebar() {
                     <img src="/satyendra.jpeg" alt="Satyendra Yadav" className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="min-w-0">
-                    <h2 className="text-sm font-bold text-white tracking-tight leading-tight truncate">Sendra.dev</h2>
+                    <h2 className="text-sm font-bold text-white tracking-tight leading-tight truncate">zebra0307</h2>
                     {/* <p className="text-[11px] text-white/40 truncate">Full Stack · Web3</p> */}
                 </div>
             </div>
@@ -93,7 +93,7 @@ export function Sidebar() {
                                 className={cn(isActive ? "text-secondary" : "text-white/35 group-hover:text-white")}
                             />
                             {link.name}
-                            {isActive && <span className="ml-auto w-1 h-1 rounded-full bg-secondary flex-shrink-0" />}
+                            {/* {isActive && <span className="ml-auto w-1 h-1 rounded-full bg-secondary flex-shrink-0" />} */}
                         </a>
                     );
                 })}

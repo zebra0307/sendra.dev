@@ -19,17 +19,6 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: "Solana Twitter dApp",
-        description: "A fully decentralized social media platform built on Solana. Features real-time on-chain interactions.",
-        tags: ["Rust", "Anchor", "Solana", "React"],
-        links: {
-            demo: "https://decentralised-solana-poll.vercel.app/",
-            code: "https://github.com/zebra0307/solana-twitter-dapp",
-        },
-        image: "bg-gradient-to-br from-secondary/10 to-secondary/5",
-        imageUrl: "/solana-twitter-new.png",
-    },
-    {
         title: "Blogs Application (MERN)",
         description: "A MERN stack blog application for content creation and consumption with seamless user authentication.",
         tags: ["React", "Node.js", "MongoDB", "Express"],
@@ -40,35 +29,38 @@ const projects: Project[] = [
         image: "bg-gradient-to-br from-secondary/10 to-secondary/5",
     },
     {
-        title: "Solana Token",
-        description: "A collection of Solana blockchain projects demonstrating token standards and NFT implementations.",
-        tags: ["Next.js", "Web3.js", "DeFi"],
+        title: "Oceanaverse",
+        description: "A decentralized Blue Carbon Registry on Solana. It enables transparent monitoring, reporting, and verification (MRV) for blue carbon credits using blockchain.",
+        tags: ["Solana", "Rust", "Anchor", "Next.js", "Web3"],
         links: {
-            demo: "#",
-            code: "https://github.com/zebra0307/Solana-Token",
+            demo: "https://oceanaverse.vercel.app/",
+            code: "https://github.com/zebra0307/blue-carbon-registry",
         },
-        image: "bg-gradient-to-br from-secondary/20 to-blue-500/20",
+        image: "bg-gradient-to-br from-blue-500/10 to-teal-500/5",
+        imageUrl: "/oceanaverse-preview.png",
     },
     {
-        title: "NFT Marketplace Escrow",
-        description: "A marketplace program where tokens can be traded for other tokens or SOL.",
-        tags: ["Solidity", "IPFS", "React"],
+        title: "Accord Registry",
+        description: "A secure protocol for notarizing digital assets and documents. Built to provide an immutable audit trail and verifiable proof of ownership on-chain.",
+        tags: ["Rust", "Solana", "Anchor", "TypeScript", "Next.js"],
         links: {
-            demo: "#",
-            code: "https://github.com/zebra0307/NFT-Marketplace",
+            demo: "https://accordregistry.vercel.app/",
+            code: "https://github.com/zebra0307/accord-registry_protocol",
         },
-        image: "bg-gradient-to-br from-accent/20 to-green-500/20",
+        image: "bg-gradient-to-br from-indigo-500/10 to-purple-500/5",
+        imageUrl: "/accord-registry-preview.png",
     },
     {
-        title: "Keep Notes dApp",
-        description: "A decentralized note-taking application on Solana.",
-        tags: ["Rust", "Anchor", "Solana", "React"],
+        title: "XDotSol",
+        description: "A decentralized polling and voting application on Solana. Leverages the speed of the blockchain to ensure tamper-proof results and transparent community governance.",
+        tags: ["Solana", "Rust", "Anchor", "Next.js", "Tailwind CSS"],
         links: {
-            demo: "#",
-            code: "https://github.com/zebra0307/Keep_Notes-dapp",
+            demo: "https://xdotsol.vercel.app/",
+            code: "https://github.com/zebra0307/Decentralised-Solana-Poll",
         },
-        image: "bg-gradient-to-br from-secondary/10 to-secondary/5",
-    },
+        image: "bg-gradient-to-br from-orange-500/10 to-yellow-500/5",
+        imageUrl: "/xdotsol-preview.png",
+    }
 ];
 
 export function Projects() {
