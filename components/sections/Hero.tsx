@@ -48,7 +48,7 @@ const TECH_STACK = [
     { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
     { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
     { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
-    { name: "Rust", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" },
+    // { name: "Rust", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-original.svg" },
     { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
 ];
 
@@ -105,23 +105,6 @@ export function Hero() {
                             I engineer <span className="text-white/80 font-medium">production-grade full-stack applications</span> — React frontends, Node.js backends, and cloud-ready APIs. With a rare edge in{" "}
                             <span className="text-secondary/80 font-medium">Solana smart contracts</span>, I bridge Web2 engineering and Web3.
                         </p>
-
-                        {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-2 mb-7">
-                            <Button id="hero-view-work-btn" variant="primary" size="sm" onClick={() => scrollTo("#projects")}>
-                                View My Work <ArrowDown size={13} />
-                            </Button>
-                            <Button id="hero-contact-btn" variant="outline" size="sm" onClick={() => scrollTo("#contact")}>
-                                <Mail size={13} /> Get in Touch
-                            </Button>
-                            <a
-                                href="/Satyendra_Yadav- resume.pdf"
-                                download="Satyendra_Yadav_Resume.pdf"
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white/50 hover:text-white border border-white/8 hover:border-white/20 rounded-lg bg-transparent hover:bg-white/5 transition-all duration-200"
-                            >
-                                <Download size={12} /> Resume
-                            </a>
-                        </div>
 
                         {/* Tech Stack strip */}
                         <div>

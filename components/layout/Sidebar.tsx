@@ -65,8 +65,8 @@ export function Sidebar() {
                     <img src="/satyendra.jpeg" alt="Satyendra Yadav" className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="min-w-0">
-                    <h2 className="text-sm font-bold text-white tracking-tight leading-tight truncate">Satyendra Yadav</h2>
-                    <p className="text-[11px] text-white/40 truncate">Full Stack · Web3</p>
+                    <h2 className="text-sm font-bold text-white tracking-tight leading-tight truncate">Sendra.dev</h2>
+                    {/* <p className="text-[11px] text-white/40 truncate">Full Stack · Web3</p> */}
                 </div>
             </div>
 

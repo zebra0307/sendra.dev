@@ -82,7 +82,7 @@ export function Skills() {
                         Technical <span className="text-secondary">Skills</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        The tools and technologies I use to build the future.
+                        {/* The tools and technologies I use to build the future. */}
                     </p>
                 </motion.div>
 

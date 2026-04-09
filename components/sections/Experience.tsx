@@ -68,7 +68,7 @@ export function Experience() {
                         Experience &amp; <span className="text-secondary">Education</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        My professional journey through Web2 and Web3.
+                        {/* My professional journey through Web2 and Web3. */}
                     </p>
                 </motion.div>
 

@@ -85,9 +85,7 @@ export function Projects() {
                         <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
                             <span className="text-secondary">Projects</span>
                         </h2>
-                        <p className="text-gray-400 max-w-xl">
-                            A selection of decentralized applications and web systems I've engineered.
-                        </p>
+                        
                     </div>
                     <Button variant="outline" className="hidden md:flex gap-2 border-white/10 hover:bg-white/5">
                         View All Repositories <Github size={16} />

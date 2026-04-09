@@ -59,7 +59,7 @@ export function About() {
                     <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
                         About <span className="text-primary">Me</span>
                     </h2>
-                    <p className="text-sm text-white/30">Who I am and what I bring to the table</p>
+                    {/* <p className="text-sm text-white/30">Who I am and what I bring to the table</p> */}
                 </motion.div>
 
                 <div className="grid lg:grid-cols-[1fr_340px] gap-10 items-start">

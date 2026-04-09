@@ -65,10 +65,10 @@ export function Contact() {
                     className="mb-8"
                 >
                     <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
-                        Let&apos;s <span className="text-secondary">Work Together</span>
+                        Let&apos;s <span className="text-secondary">Build Together</span>
                     </h2>
                     <p className="text-gray-400 max-w-xl mx-auto">
-                        Have a project in mind? Whether it&apos;s DeFi, dApps, or full-stack — I&apos;d love to build it with you.
+                        {/* Have a project in mind? Whether it&apos;s DeFi, dApps, or full-stack — I&apos;d love to build it with you. */}
                     </p>
                 </motion.div>
 

@@ -71,7 +71,7 @@ export function WorkGrid() {
         <section className="py-20 md:py-28 px-4 md:px-10">
             <div className="mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
-                    Featured <span className="text-primary">Projects</span>
+                    My <span className="text-primary">Projects</span>
                 </h2>
                 <p className="text-white/50 text-lg max-w-xl">
                     A selection of decentralized applications and web systems I&apos;ve engineered.
